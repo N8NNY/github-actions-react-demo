@@ -1,16 +1,16 @@
-name: Release UAT
+name: Release DEV
 on:
   push:
     branches:
       - main
 jobs:
-  Release-UAT:
+  Release-DEV:
     runs-on: ubuntu-20.04
     steps:
       - name: Prepare Variables
         id: vars
         run: |
-          TAG=$(echo $GITHUB_SHA | head -c7)
+          TAG=dev-$(echo $GITHUB_SHA | head -c7)
           IMAGE="n8nny/github-actions-react-demo"
           echo ::set-output name=tagged_image::${IMAGE}:${TAG}
           echo ::set-output name=tag::${TAG}
@@ -27,7 +27,7 @@ jobs:
         run: yarn
       - name: Build
         run: |
-          export REACT_APP_VERSION=UAT-$(git rev-parse --short HEAD)
+          export REACT_APP_VERSION=DEV-$(git rev-parse --short HEAD)
           yarn build
       - name: Test
         run: yarn test --watchAll=false
