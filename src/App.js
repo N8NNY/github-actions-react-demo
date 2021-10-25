@@ -19,6 +19,7 @@ function App() {
         </a>
         <h2>version : { process.env.REACT_APP_VERSION }</h2>
       </header>
+      <h2> footer </h2>
     </div>
   );
 }
