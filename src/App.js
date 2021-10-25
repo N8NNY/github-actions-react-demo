@@ -20,6 +20,7 @@ function App() {
         <h2> add feature test#2 </h2>
         <h2>version : { process.env.REACT_APP_VERSION }</h2>
       </header>
+      <h2> footer </h2>
     </div>
   );
 }
