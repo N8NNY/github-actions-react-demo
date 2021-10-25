@@ -83,7 +83,7 @@ jobs:
 
   Release-Pre-Production:
     runs-on: ubuntu-20.04
-    environment: QA
+    environment: Pre-Production
     needs: [Release-QA]
     steps:
       - name: Prepare Variables
